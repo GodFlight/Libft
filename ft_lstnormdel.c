@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstnormdel.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 17:24:56 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/10 16:34:39 by rkeli            ###   ########.fr       */
+/*   Created: 2019/04/10 14:56:13 by rkeli             #+#    #+#             */
+/*   Updated: 2019/04/10 15:36:02 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+void	ft_lstnormdel(t_list *alst)
 {
-	return ((c >= 'A' && c <= 'Z') ? (c + 32) : c);
+	t_list *link;
+
+	if (!alst)
+		return ;
+	while (alst)
+	{
+		link = alst->next;
+		ft_lstnormdelone(alst);
+		alst = link;
+	}
+	alst = NULL;
 }

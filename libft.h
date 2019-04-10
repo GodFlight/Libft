@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:32:02 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/09 20:27:56 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/10 16:38:08 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,9 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+void				ft_lstnormdel(t_list *alst);
+void				ft_lstnormdelone(t_list *alst);
 
 #endif

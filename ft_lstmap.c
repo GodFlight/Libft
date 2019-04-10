@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 17:24:56 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/10 16:34:39 by rkeli            ###   ########.fr       */
+/*   Created: 2019/04/09 21:10:52 by rkeli             #+#    #+#             */
+/*   Updated: 2019/04/10 16:57:25 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	return ((c >= 'A' && c <= 'Z') ? (c + 32) : c);
+	t_list *new_list;
+	t_list *makson;
+	t_list *seg;
+
+	if (!lst || !f)
+		return (NULL);
+	new_list = f(lst);
+	makson = new_list;
+	lst = lst->next;
+	while (lst)
+	{
+		if ((seg = f(lst)))
+		{
+			new_list->next = seg;
+			new_list = new_list->next;
+		}
+		lst = lst->next;
+	}
+	return (makson);
 }
