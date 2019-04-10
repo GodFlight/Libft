@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 17:35:10 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/03 20:10:01 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/10 19:34:17 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memmove(void *dst, void *src, size_t n)
 {
-	char	*s1;
-	char	*s2;
-	int		i;
+	unsigned char	*s1;
+	unsigned char	*s2;
+	size_t			i;
 
 	i = 0;
-	s1 = (char*)dst;
-	s2 = (char*)src;
+	s1 = (unsigned char*)dst;
+	s2 = (unsigned char*)src;
 	if (dst > src)
 	{
 		i = n - 1;

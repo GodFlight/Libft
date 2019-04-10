@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 14:56:13 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/10 15:36:02 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/10 20:59:26 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	ft_lstnormdel(t_list *alst)
 	{
 		link = alst->next;
 		ft_lstnormdelone(alst);
+		free(alst);
 		alst = link;
 	}
+	free(link);
 	alst = NULL;
 }

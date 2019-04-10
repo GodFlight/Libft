@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 17:32:11 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/06 12:26:58 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/10 21:08:45 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	*ft_memalloc(size_t size)
 {
 	void *rs;
 
-	rs = malloc(size);
-	if (rs == NULL)
+	if (size == (size_t)(-1))
+		return (0);
+	if (!(rs = malloc(size)))
 		return (NULL);
 	else
 	{
