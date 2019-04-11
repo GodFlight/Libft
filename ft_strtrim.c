@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 15:39:43 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/09 19:11:45 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/11 12:38:56 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ char	*ft_strtrim(char const *s)
 	if (!s)
 		return (0);
 	rmb = ft_strlen(s);
-	if (!s)
-		return (0);
 	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
 		i++;
 	if (i == rmb)

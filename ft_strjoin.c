@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 15:13:34 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/06 15:37:37 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/11 13:33:21 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	if (!s1 || !s2)
-		return (0);
+		return (NULL);
 	if (!(strconc = (char*)malloc(sizeof(char) *
 				(ft_strlen(s1) + ft_strlen(s2) + 1))))
-		return (0);
+		return (NULL);
 	while (s2[i] != '\0' || s1[j] != '\0')
 	{
 		if (s1[j] != '\0')

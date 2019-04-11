@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 17:22:16 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/09 18:44:28 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/11 12:05:10 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	if (!alst || !*alst)
+	if (!alst || !*alst || !del)
 		return ;
 	del((*alst)->content, (*alst)->content_size);
 	free(*alst);

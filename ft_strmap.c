@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 12:09:32 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/06 12:25:43 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/11 12:06:54 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t			i;
 
 	i = 0;
-	if (!s)
+	if (!s || !f)
 		return (NULL);
-	fs = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (fs == NULL)
+	if (!(fs = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
 	while (s[i] != '\0')
 	{

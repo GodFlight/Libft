@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:32:02 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/10 20:07:46 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/11 14:58:08 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# define ABS(x) ((x < 0) ? -(x) : (x))
+# define L_MAX 9223372036854775807L
 
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlen(const char *s);

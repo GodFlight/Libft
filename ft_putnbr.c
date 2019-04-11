@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 20:48:47 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/08 16:57:58 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/11 14:54:41 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 void	ft_putnbr(int n)
 {
-	if (n >= -2147483648 && n <= 2147483647)
+	if (-2147483648 == n)
 	{
-		if (n < 0)
-		{
-			n = -n;
-			ft_putchar('-');
-		}
-		if (-2147483648 == n)
-		{
-			ft_putchar('2');
-			n = 147483648;
-		}
-		if (n / 10 > 0)
-			ft_putnbr(n / 10);
-		ft_putchar(n % 10 + 48);
+		ft_putchar('-');
+		ft_putchar('2');
+		n = 147483648;
 	}
-	else
-		ft_putchar('0');
+	if (n < 0)
+	{
+		n = -n;
+		ft_putchar('-');
+	}
+	if (n / 10 > 0)
+		ft_putnbr(n / 10);
+	ft_putchar(n % 10 + 48);
 }

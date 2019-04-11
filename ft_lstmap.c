@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 21:10:52 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/10 16:57:25 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/11 13:15:04 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		{
 			new_list->next = seg;
 			new_list = new_list->next;
+		}
+		else
+		{
+			ft_lstnormdel(new_list);
+			return (NULL);
 		}
 		lst = lst->next;
 	}

@@ -6,11 +6,12 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 13:46:40 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/08 13:05:31 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/11 12:20:46 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
