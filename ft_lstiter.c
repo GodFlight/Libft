@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 17:11:11 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/09 17:16:29 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/12 15:11:50 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (!lst)
+	if (!lst || !f)
 		return ;
 	while (lst != NULL)
 	{
