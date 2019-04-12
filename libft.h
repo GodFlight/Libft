@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:32:02 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/11 14:58:08 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/12 12:39:39 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# define ABS(x) ((x < 0) ? -(x) : (x))
+# define ABS(Value) ((Value < 0) ? -(Value) : (Value))
 # define L_MAX 9223372036854775807L
 
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
@@ -88,5 +88,8 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 void				ft_lstnormdel(t_list *alst);
 void				ft_lstnormdelone(t_list *alst);
+char				*ft_updt(char *str, char *update);
+void				ft_swap(int *a, int *b);
+void				ft_sort_bubl(int ac, char **av);
 
 #endif
