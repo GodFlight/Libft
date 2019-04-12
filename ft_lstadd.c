@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 13:29:48 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/12 15:11:34 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/12 21:37:47 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (!new || !alst || !*alst)
+	if (!new)
 		return ;
 	new->next = *alst;
 	*alst = new;
