@@ -6,18 +6,18 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 19:18:23 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/09 20:46:52 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/04/14 22:42:16 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void			free_split(char **str)
+static void			free_split(char **str, size_t number_of_words)
 {
 	size_t index;
 
 	index = 0;
-	while (str[index])
+	while (index <= number_of_words)
 	{
 		free(str[index]);
 		index++;
@@ -36,7 +36,7 @@ static size_t		symbol_count(const char *s, char c)
 }
 
 static char			*put_word_to_array(const char *s, char c,
-										char **str_split)
+									char **str_split, size_t number_of_words)
 {
 	char		*fs;
 	size_t		j;
@@ -44,7 +44,7 @@ static char			*put_word_to_array(const char *s, char c,
 	j = 0;
 	if (!(fs = (char*)malloc(sizeof(char) * (symbol_count(s, c) + 1))))
 	{
-		free_split(str_split);
+		free_split(str_split, number_of_words);
 		return (0);
 	}
 	while (s[j] != '\0' && s[j] != c)
@@ -97,7 +97,7 @@ char				**ft_strsplit(char const *s, char c)
 	{
 		while (s[rmb] == c && s[rmb] != '\0')
 			rmb++;
-		fs[i] = put_word_to_array(&s[rmb], c, fs);
+		fs[i] = put_word_to_array(&s[rmb], c, fs, number_of_words);
 		if (!fs[i])
 			return (NULL);
 		rmb = rmb + symbol_count(&s[rmb], c);
