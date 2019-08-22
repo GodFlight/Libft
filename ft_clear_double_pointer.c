@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_clear_double_pointer.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/21 23:17:41 by rkeli             #+#    #+#             */
-/*   Updated: 2019/08/21 23:17:41 by rkeli            ###   ########.fr       */
+/*   Created: 2019/08/22 20:49:21 by rkeli             #+#    #+#             */
+/*   Updated: 2019/08/22 20:49:26 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_clear_double_pointer(void **arr, int size)
 {
-	size_t i;
+	int	i;
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != '\0')
+	if (arr && *arr)
 	{
-		write(1, &s[i], 1);
-		i++;
+		i = 0;
+		while (i < size)
+		{
+			free(arr[i]);
+			arr[i] = NULL;
+			i++;
+		}
+		free(arr);
 	}
 }

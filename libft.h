@@ -6,7 +6,7 @@
 /*   By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:32:02 by rkeli             #+#    #+#             */
-/*   Updated: 2019/04/12 12:39:39 by rkeli            ###   ########.fr       */
+/*   Updated: 2019/08/22 20:52:36 by rkeli            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 # define ABS(Value) ((Value < 0) ? -(Value) : (Value))
 # define L_MAX 9223372036854775807L
+
+# define HASH_P		31
+# define HASH_M		1000000009
 
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlen(const char *s);
@@ -71,6 +75,11 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack,
 						const char *needle, size_t len);
+size_t				ft_strwcnumber(const char *s, int c);
+int					ft_isstn(char c);
+int					ft_strhash(const char *str);
+void				ft_clear_double_pointer(void **arr, int size);
+int					*quick_sort(float *arr, int size);
 
 typedef struct		s_list
 {
@@ -78,6 +87,13 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_vector
+{
+	void			*content;
+	struct s_vector	*next;
+	struct s_vector *prev;
+}					t_vector;
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstadd(t_list **alst, t_list *new);
@@ -90,6 +106,9 @@ void				ft_lstnormdel(t_list *alst);
 void				ft_lstnormdelone(t_list *alst);
 char				*ft_updt(char *str, char *update);
 void				ft_swap(int *a, int *b);
+void				ft_fswap(float *a, float *b);
 void				ft_sort_bubl(int ac, char **av);
+int					ft_abs(int a);
+void				ft_segfault(void);
 
 #endif
