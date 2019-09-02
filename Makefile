@@ -6,7 +6,7 @@
 #    By: rkeli <rkeli@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/21 16:59:28 by rkeli             #+#    #+#              #
-#    Updated: 2019/08/21 17:26:11 by rkeli            ###   ########.fr        #
+#    Updated: 2019/09/02 10:17:59 by rkeli            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,17 +84,17 @@ SRCS := ft_strlcat.c\
 		ft_quick_sort.c
 
 OBJS := $(SRCS:.c=.o)
-HEADERS := libft.h get_next_line.h
-INCLUDE := -I ./
+HEADERS := ./include/libft.h ./include/get_next_line.h
+INCLUDE := -I ./include
 CC	:= gcc
 CFLAGS := -Wextra -Werror -Wall -O3
 DIR_BIN := bin/
 REMOVE := rm -rf
 DIR_LIBFT := .
 
-vpath %.c $(DIR_LIBFT)
+vpath %.c $(DIR_LIBFT)/src/
 vpath %.o $(DIR_BIN)
-vpath %.h $(DIR_LIBFT)
+vpath %.h $(DIR_LIBFT)./include
 
 all: $(NAME)
 
@@ -118,5 +118,3 @@ fclean: clean
 	$(REMOVE) $(NAME)
 
 re: fclean all
-
-.PHONY: clean all re
